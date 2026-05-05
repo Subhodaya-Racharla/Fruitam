@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FruitAM — Fresh Fruits Delivered in 30 mins · Hyderabad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;--bg-soft:#FAF7F2;--bg-tint:#F5F0E8;
+  --ink:#0E1014;--ink-2:#3D4148;--ink-3:#6B7280;
+  --line:#E8E4DC;--primary:#E63946;--primary-soft:#FFE5E7;
+  --accent:#06614C;--accent-soft:#E0F0EA;
+  --gold:#F59E0B;--green:#16A34A;
+  --whatsapp:#25D366;--whatsapp-dark:#1DA851;
+  --shadow-sm:0 1px 2px rgba(14,16,20,.06);
+  --shadow-md:0 4px 16px rgba(14,16,20,.08);
+  --shadow-lg:0 16px 40px -8px rgba(14,16,20,.16);
+  --shadow-xl:0 24px 60px -12px rgba(14,16,20,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 24px;display:flex;align-items:center;gap:20px}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:24px;letter-spacing:-.03em;display:flex;align-items:center;gap:8px;flex-shrink:0}
+.logo-icon{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#FF6B6B,#E63946);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:'Plus Jakarta Sans';font-size:15px}
+.logo i{font-style:italic;color:var(--primary)}
+.location-pill{display:flex;align-items:center;gap:8px;padding:8px 14px;background:var(--bg-soft);border-radius:999px;font-size:13px;font-weight:500;border:none;flex-shrink:0;transition:background .2s}
+.location-pill:hover{background:var(--bg-tint)}
+.location-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.nav-search{flex:1;max-width:520px;position:relative}
+.nav-search input{width:100%;padding:12px 16px 12px 44px;background:var(--bg-soft);border:1px solid transparent;border-radius:999px;font-size:14px;font-family:inherit;transition:all .2s;color:var(--ink)}
+.nav-search input::placeholder{color:var(--ink-3)}
+.nav-search input:focus{outline:none;background:#fff;border-color:var(--ink);box-shadow:0 0 0 4px rgba(14,16,20,.05)}
+.nav-search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--ink-3)}
+.nav-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.icon-btn{width:42px;height:42px;border-radius:50%;background:var(--bg-soft);border:none;display:flex;align-items:center;justify-content:center;transition:background .2s;position:relative}
+.icon-btn:hover{background:var(--bg-tint)}
+.icon-btn .badge{position:absolute;top:-2px;right:-2px;background:var(--primary);color:#fff;min-width:20px;height:20px;border-radius:999px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 5px;border:2px solid #fff}
+@media(max-width:880px){nav{flex-wrap:wrap;padding:12px 16px;gap:10px}.nav-search{order:3;width:100%;max-width:none;flex-basis:100%}.location-pill{font-size:12px;padding:6px 12px}}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#FFE5E7 0%,#FFF0E8 50%,#FFE9D6 100%);position:relative;overflow:hidden;padding:60px 24px 80px}
+.hero::before{content:"";position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(230,57,70,.15),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;left:-150px;bottom:-150px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(6,97,76,.1),transparent 70%);pointer-events:none}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(255,255,255,.7);border:1px solid rgba(14,16,20,.08);border-radius:999px;font-size:12px;font-weight:600;color:var(--ink-2);margin-bottom:20px;backdrop-filter:blur(8px)}
+.hero-badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(22,163,74,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(22,163,74,.6)}70%{box-shadow:0 0 0 10px rgba(22,163,74,0)}100%{box-shadow:0 0 0 0 rgba(22,163,74,0)}}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(40px,6.5vw,84px);font-weight:500;letter-spacing:-.04em;line-height:.95;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--primary);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:6%;height:14%;background:rgba(245,158,11,.4);z-index:-1;transform:rotate(-1deg)}
+.hero p.lead{font-size:17px;color:var(--ink-2);max-width:480px;margin-bottom:32px;line-height:1.6}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--ink);color:#fff;padding:16px 28px;border-radius:999px;border:none;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:all .25s}
+.btn-primary:hover{background:var(--primary);transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(230,57,70,.4)}
+.btn-outline{background:#fff;color:var(--ink);padding:16px 28px;border-radius:999px;border:1px solid var(--line);font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:all .2s}
+.btn-outline:hover{border-color:var(--ink);background:var(--bg-soft)}
+.hero-stats{display:flex;gap:32px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(14,16,20,.1)}
+.hstat .n{font-family:'Fraunces',serif;font-size:32px;font-weight:500;line-height:1}
+.hstat .l{font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;margin-top:6px;font-weight:600}
+.hero-visual{position:relative;height:520px}
+.hero-photo{position:absolute;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-xl)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hp-1{width:62%;height:75%;top:10%;right:0;transform:rotate(3deg);z-index:2}
+.hp-2{width:42%;height:42%;bottom:5%;left:0;transform:rotate(-5deg);z-index:3}
+.floating-card{position:absolute;background:#fff;padding:14px 18px;border-radius:14px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:12px;z-index:4;animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.fc-1{top:5%;left:-2%}.fc-2{bottom:18%;right:-4%;animation-delay:1.5s}
+.floating-card .ic{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.floating-card .ic.green{background:var(--accent-soft)}
+.floating-card .ic.gold{background:#FEF3C7}
+.floating-card .t{font-size:13px;font-weight:700;line-height:1.2}
+.floating-card .s{font-size:11px;color:var(--ink-3);margin-top:2px}
+@media(max-width:920px){.hero-inner{grid-template-columns:1fr;gap:40px}.hero-visual{height:380px;order:-1}.hero{padding:40px 16px 60px}.hero-stats{gap:20px;flex-wrap:wrap}.hstat .n{font-size:24px}}
+
+/* SECTIONS */
+section.sec{padding:80px 24px;max-width:1280px;margin:0 auto}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px}
+.sec-head h2{font-family:'Fraunces',serif;font-size:clamp(30px,4vw,48px);font-weight:500;letter-spacing:-.03em;line-height:1.05}
+.sec-head h2 em{font-weight:400;font-style:italic;color:var(--primary)}
+.sec-head .sub{font-size:14px;color:var(--ink-3);margin-top:6px}
+.view-all{font-size:13px;font-weight:600;color:var(--primary);display:inline-flex;align-items:center;gap:4px;transition:gap .2s}
+.view-all:hover{gap:8px}
+
+/* CATEGORIES */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.cat-tile{background:var(--bg-soft);border-radius:14px;padding:20px 18px;border:1px solid transparent;cursor:pointer;transition:all .25s;display:flex;align-items:center;gap:14px}
+.cat-tile:hover{background:#fff;border-color:var(--ink);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.cat-tile .emoji{width:46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.cat-tile .nm{font-size:14px;font-weight:700;line-height:1.2}
+.cat-tile .ct{font-size:11px;color:var(--ink-3);margin-top:3px}
+
+/* FILTER BAR */
+.filter-bar{position:sticky;top:69px;z-index:80;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px 24px;display:flex;align-items:center;gap:10px;overflow-x:auto;scrollbar-width:none}
+.filter-bar::-webkit-scrollbar{display:none}
+.chip{padding:8px 16px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap;transition:all .2s;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2)}
+.chip:hover{border-color:var(--ink)}
+.chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip-veg{width:14px;height:14px;border:1.5px solid var(--green);padding:1px;display:inline-flex;align-items:center;justify-content:center}
+.chip-veg::before{content:"";width:7px;height:7px;background:var(--green);border-radius:50%}
+
+/* MENU GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);transition:all .25s;position:relative;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.card-img{aspect-ratio:4/3;position:relative;overflow:hidden;background:linear-gradient(135deg,#FFE5E7,#FFE9D6)}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover .card-img img{transform:scale(1.05)}
+.card-tags{position:absolute;top:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap}
+.pill{padding:4px 10px;border-radius:999px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;backdrop-filter:blur(8px)}
+.pill.bestseller{background:rgba(245,158,11,.95);color:#fff}
+.pill.new{background:rgba(6,97,76,.95);color:#fff}
+.pill.discount{background:rgba(230,57,70,.95);color:#fff}
+.heart-btn{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border:none;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--ink-2)}
+.heart-btn:hover{background:#fff;transform:scale(1.1)}
+.heart-btn.liked{color:var(--primary)}
+.heart-btn.liked svg{fill:currentColor}
+.card-body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
+.card-title{font-size:17px;font-weight:700;line-height:1.25;letter-spacing:-.01em}
+.veg-mark{width:16px;height:16px;border:1.5px solid var(--green);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:3px}
+.veg-mark::before{content:"";width:8px;height:8px;background:var(--green);border-radius:50%}
+.card-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:12px;color:var(--ink-3);flex-wrap:wrap}
+.rating{display:inline-flex;align-items:center;gap:3px;background:#EFFBF1;color:var(--green);padding:2px 6px;border-radius:5px;font-weight:700;font-size:11px}
+.rating svg{width:10px;height:10px;fill:currentColor}
+.meta-dot::before{content:"·";margin:0 4px;color:var(--line)}
+.card-desc{font-size:13px;color:var(--ink-3);line-height:1.5;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.card-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:14px;border-top:1px dashed var(--line)}
+.price-block{display:flex;flex-direction:column;gap:2px}
+.price{font-size:20px;font-weight:800;letter-spacing:-.01em}
+.price .cur{font-size:14px;font-weight:600;opacity:.7;margin-right:1px}
+.price-old{font-size:12px;color:var(--ink-3);text-decoration:line-through}
+.action-zone{position:relative;min-width:100px;height:38px}
+.add-btn{background:#fff;color:var(--green);border:1.5px solid var(--green);padding:0;border-radius:8px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;transition:all .2s;box-shadow:var(--shadow-sm);width:100%;height:100%}
+.add-btn:hover{background:var(--green);color:#fff;box-shadow:0 6px 16px -4px rgba(22,163,74,.4);transform:translateY(-1px)}
+.qty-stepper{display:none;align-items:center;background:var(--green);border-radius:8px;overflow:hidden;box-shadow:0 6px 16px -4px rgba(22,163,74,.4);width:100%;height:100%}
+.qty-stepper.show{display:flex}
+.qty-stepper button{background:transparent;color:#fff;border:none;width:34px;height:100%;font-size:18px;font-weight:700;transition:background .15s}
+.qty-stepper button:hover{background:rgba(0,0,0,.15)}
+.qty-stepper .qty-num{flex:1;text-align:center;color:#fff;font-size:15px;font-weight:700;min-width:28px;user-select:none}
+.qty-num.bump{animation:bump .3s ease}
+@keyframes bump{0%{transform:scale(1)}50%{transform:scale(1.3)}100%{transform:scale(1)}}
+
+/* TRUST */
+.trust-strip{background:var(--bg-soft);padding:48px 24px;margin-top:40px}
+.trust-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.trust-item{display:flex;gap:14px;align-items:flex-start}
+.trust-item .ic{width:44px;height:44px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.trust-item h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.trust-item p{font-size:13px;color:var(--ink-3);line-height:1.5}
+@media(max-width:768px){.trust-grid{grid-template-columns:1fr 1fr}}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--ink);color:#fff;padding:80px 24px;margin-top:40px}
+.testimonials .inner{max-width:1280px;margin:0 auto}
+.testimonials h2{color:#fff}
+.testimonials .sub{color:rgba(255,255,255,.6)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.test-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px;transition:all .25s}
+.test-card:hover{background:rgba(255,255,255,.08);transform:translateY(-4px)}
+.test-stars{display:flex;gap:2px;margin-bottom:14px;color:var(--gold)}
+.test-stars svg{width:16px;height:16px;fill:currentColor}
+.test-text{font-family:'Fraunces',serif;font-size:18px;line-height:1.5;margin-bottom:24px;font-weight:400}
+.test-author{display:flex;align-items:center;gap:12px}
+.test-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--gold));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px}
+.test-name{font-size:14px;font-weight:700}
+.test-loc{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px}
+@media(max-width:880px){.test-grid{grid-template-columns:1fr}}
+
+/* STORY */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:80px 24px;max-width:1280px;margin:0 auto}
+.story-img{aspect-ratio:4/5;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-xl)}
+.story-img img{width:100%;height:100%;object-fit:cover}
+.story-text h2{font-family:'Fraunces',serif;font-size:clamp(30px,4vw,48px);font-weight:500;letter-spacing:-.03em;line-height:1.05;margin-bottom:24px}
+.story-text h2 em{color:var(--primary);font-style:italic;font-weight:400}
+.story-text p{font-size:16px;color:var(--ink-2);margin-bottom:18px;line-height:1.7}
+.story-sig{font-family:'Fraunces',serif;font-style:italic;font-size:24px;color:var(--primary);margin-top:24px}
+@media(max-width:880px){.story{grid-template-columns:1fr;gap:32px;padding:60px 16px}}
+
+/* FAQ */
+.faq{padding:80px 24px;max-width:840px;margin:0 auto}
+.faq h2{font-family:'Fraunces',serif;font-size:clamp(30px,4vw,48px);font-weight:500;letter-spacing:-.03em;text-align:center;margin-bottom:12px}
+.faq h2 em{color:var(--primary);font-style:italic;font-weight:400}
+.faq .sub-c{text-align:center;color:var(--ink-3);margin-bottom:48px;font-size:15px}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+.faq-item:hover{border-color:var(--ink-3)}
+.faq-q{width:100%;padding:20px 24px;background:none;border:none;font-size:15px;font-weight:600;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink)}
+.faq-q .plus{width:24px;height:24px;border-radius:50%;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all .25s}
+.faq-item.open .faq-q .plus{background:var(--ink);color:#fff;transform:rotate(135deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.open .faq-a{max-height:200px}
+.faq-a-inner{padding:0 24px 20px;font-size:14px;color:var(--ink-3);line-height:1.7}
+
+/* FOOTER */
+footer{background:var(--ink);color:#fff;padding:80px 24px 32px;margin-top:40px}
+.foot{max-width:1280px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:60px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand h3{font-family:'Fraunces',serif;font-size:42px;font-weight:500;letter-spacing:-.03em;margin-bottom:16px}
+.foot-brand h3 em{color:var(--primary);font-style:italic}
+.foot-brand p{font-size:14px;opacity:.7;max-width:340px;line-height:1.6;margin-bottom:24px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.foot-social a:hover{background:var(--primary);transform:translateY(-2px)}
+.foot-social svg{width:16px;height:16px}
+.foot-col h4{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--primary);margin-bottom:18px;font-weight:700}
+.foot-col a,.foot-col p{display:block;font-size:14px;margin-bottom:10px;opacity:.75;transition:opacity .2s}
+.foot-col a:hover{opacity:1}
+.foot-bot{padding-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;opacity:.5}
+@media(max-width:880px){.foot-top{grid-template-columns:1fr 1fr;gap:40px}.foot-brand{grid-column:1/-1}}
+
+/* CART BAR */
+.cart-bar{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(140px);background:#fff;color:var(--ink);padding:10px 10px 10px 22px;border-radius:999px;box-shadow:var(--shadow-xl);display:flex;align-items:center;gap:20px;z-index:85;transition:transform .4s cubic-bezier(.2,.8,.2,1);max-width:calc(100% - 24px);border:1px solid var(--line)}
+.cart-bar.show{transform:translateX(-50%) translateY(0)}
+.cart-bar .info{display:flex;flex-direction:column;line-height:1.2;color:var(--ink)}
+.cart-bar .ct{font-size:12px;color:var(--ink-3);font-weight:600}
+.cart-bar .pr{font-size:15px;font-weight:800;color:var(--ink);margin-top:3px;letter-spacing:-.01em}
+.cart-bar .view-cart{background:var(--ink);color:#fff;padding:11px 20px;border-radius:999px;border:none;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.cart-bar .view-cart:hover{background:var(--primary)}
+@media(max-width:480px){.cart-bar{padding:8px 8px 8px 18px;gap:12px;width:auto}.cart-bar .ct{font-size:11px}.cart-bar .pr{font-size:14px}.cart-bar .view-cart{padding:10px 16px;font-size:12px}}
+
+/* CART DRAWER */
+.overlay{position:fixed;inset:0;background:rgba(14,16,20,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.overlay.open{opacity:1;pointer-events:all}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--bg-soft);z-index:201;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.2)}
+.drawer.open{transform:translateX(0)}
+.drawer-head{padding:20px 24px;background:#fff;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.drawer-head h3{font-family:'Fraunces',serif;font-size:24px;font-weight:600;letter-spacing:-.02em}
+.drawer-head .item-ct{font-size:12px;color:var(--ink-3);margin-top:2px}
+.close-btn{background:var(--bg-soft);border:none;width:36px;height:36px;border-radius:50%;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.close-btn:hover{background:var(--ink);color:#fff}
+.drawer-body{flex:1;overflow-y:auto}
+.empty{text-align:center;padding:60px 20px}
+.empty .em-emoji{font-size:48px;margin-bottom:14px}
+.empty h4{font-family:'Fraunces',serif;font-size:22px;font-weight:600;margin-bottom:6px}
+.empty p{color:var(--ink-3);font-size:14px}
+.cart-items{padding:14px 20px}
+.ci{display:grid;grid-template-columns:60px 1fr auto;gap:12px;padding:14px;background:#fff;border-radius:14px;margin-bottom:10px;align-items:center}
+.ci-img{width:60px;height:60px;border-radius:10px;overflow:hidden;background:var(--bg-tint)}
+.ci-img img{width:100%;height:100%;object-fit:cover}
+.ci-name{font-size:14px;font-weight:700;line-height:1.2;margin-bottom:4px}
+.ci-price{font-size:12px;color:var(--ink-3)}
+.ci-stepper{display:flex;align-items:center;background:#fff;border:1.5px solid var(--green);border-radius:8px;overflow:hidden;margin-top:6px;width:fit-content}
+.ci-stepper button{background:transparent;color:var(--green);border:none;width:26px;height:28px;font-size:14px;font-weight:700}
+.ci-stepper button:hover{background:var(--green);color:#fff}
+.ci-stepper .n{color:var(--green);font-size:13px;font-weight:700;min-width:24px;text-align:center}
+.ci-total{font-size:15px;font-weight:700;text-align:right}
+.bill-summary{background:#fff;margin:0 20px 20px;border-radius:14px;padding:18px 20px}
+.bill-summary h5,.checkout-form h5{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-bottom:12px;font-weight:700}
+.bill-row{display:flex;justify-content:space-between;margin-bottom:10px;font-size:14px;color:var(--ink-2)}
+.bill-row .free{color:var(--green);font-weight:700;font-size:12px}
+.bill-row.total{border-top:1px dashed var(--line);padding-top:12px;margin-top:12px;font-size:16px;font-weight:800;color:var(--ink)}
+.save-banner{background:var(--accent-soft);color:var(--accent);padding:10px 14px;border-radius:8px;font-size:12px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.checkout-form{background:#fff;margin:0 20px 20px;padding:20px;border-radius:14px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--ink-2)}
+.field input,.field textarea,.field select{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:8px;font-size:13px;font-family:inherit;background:var(--bg-soft);transition:all .2s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--ink);background:#fff;box-shadow:0 0 0 3px rgba(14,16,20,.05)}
+.field textarea{min-height:54px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pay-options{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.pay-opt{padding:10px 8px;border:1.5px solid var(--line);border-radius:8px;background:#fff;font-size:11px;font-weight:600;cursor:pointer;text-align:center;transition:all .2s}
+.pay-opt:hover{border-color:var(--ink-3)}
+.pay-opt.active{border-color:var(--green);background:#EFFBF1;color:var(--green)}
+.drawer-foot{padding:18px 20px 20px;background:#fff;border-top:1px solid var(--line)}
+.whatsapp-btn{width:100%;background:var(--whatsapp);color:#fff;border:none;padding:16px;border-radius:12px;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .2s}
+.whatsapp-btn:hover{background:var(--whatsapp-dark);transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(37,211,102,.5)}
+.form-note{font-size:11px;color:var(--ink-3);text-align:center;margin-top:10px;line-height:1.5}
+
+/* TOAST */
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:999px;font-size:13px;font-weight:600;z-index:300;display:flex;align-items:center;gap:8px;transition:transform .35s cubic-bezier(.2,.8,.2,1);box-shadow:var(--shadow-xl)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast .check{background:var(--green);color:#fff;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){section.sec{padding:60px 16px}.filter-bar{padding:12px 16px;top:120px}.grid{gap:16px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo"><span class="logo-icon">F</span>Fruit<i>AM</i></a>
+  <button class="location-pill"><span class="dot"></span><strong>Hyderabad</strong>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="nav-search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="searchInput" placeholder="Search for fruits, juices, bowls..." />
+  </div>
+  <div class="nav-actions">
+    <button class="icon-btn" title="Account">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </button>
+    <button class="icon-btn" onclick="toggleCart()" title="Cart">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span class="badge" id="navCartBadge" style="display:none">0</span>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-badge"><span class="pulse"></span> Now delivering · 30 mins or less</span>
+      <h1>Fresh fruits,<br><em>cut this morning.</em></h1>
+      <p class="lead">Hand-picked at dawn. Cut by 6am. At your door before breakfast. No frozen tricks. Just real fruit.</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn-primary">Order now
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#story" class="btn-outline">Our story</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="n">15K+</div><div class="l">Boxes delivered</div></div>
+        <div class="hstat"><div class="n">4.9★</div><div class="l">Average rating</div></div>
+        <div class="hstat"><div class="n">30min</div><div class="l">Delivery</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo hp-1"><img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=800&q=80" alt=""/></div>
+      <div class="hero-photo hp-2"><img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=600&q=80" alt=""/></div>
+      <div class="floating-card fc-1"><div class="ic gold">⚡</div><div><div class="t">30 min delivery</div><div class="s">Anywhere in Hyderabad</div></div></div>
+      <div class="floating-card fc-2"><div class="ic green">✓</div><div><div class="t">100% farm fresh</div><div class="s">Sourced same day</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="categories">
+  <div class="sec-head reveal">
+    <div><h2>What's on the <em>menu</em> today</h2><p class="sub">Pick a category · Updated every morning</p></div>
+    <a href="#menu" class="view-all">View full menu →</a>
+  </div>
+  <div class="cats" id="catsGrid"></div>
+</section>
+
+<div class="filter-bar" id="filterBar">
+  <button class="chip active" data-filter="all">All items</button>
+  <button class="chip" data-filter="signature">📦 Signature Boxes</button>
+  <button class="chip" data-filter="bowls">🥣 Breakfast Bowls</button>
+  <button class="chip" data-filter="juice">🥤 Cold-Pressed</button>
+  <button class="chip" data-filter="single">🍓 Single Fruits</button>
+  <button class="chip" data-filter="bestseller">⭐ Bestsellers</button>
+  <button class="chip" data-filter="new">✨ New</button>
+  <button class="chip" data-filter="veg"><span class="chip-veg"></span> Pure Veg</button>
+</div>
+
+<section class="sec" id="menu" style="padding-top:40px">
+  <div class="sec-head reveal">
+    <div><h2>Today's <em>fresh</em> selection</h2><p class="sub" id="menuSub">Showing all items</p></div>
+  </div>
+  <div class="grid" id="menuGrid"></div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-grid">
+    <div class="trust-item"><div class="ic">🌅</div><div><h4>Cut at 5 AM</h4><p>Sliced fresh every morning, never the day before.</p></div></div>
+    <div class="trust-item"><div class="ic">🚴</div><div><h4>30-min delivery</h4><p>From our kitchen to your door, anywhere in Hyderabad.</p></div></div>
+    <div class="trust-item"><div class="ic">🌱</div><div><h4>Zero preservatives</h4><p>No frozen, no chemicals. Just real fruit.</p></div></div>
+    <div class="trust-item"><div class="ic">💯</div><div><h4>100% money back</h4><p>Not fresh? Tell us within 30 mins, full refund.</p></div></div>
+  </div>
+</div>
+
+<section class="story" id="story">
+  <div class="story-img reveal"><img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=800&q=80" alt=""/></div>
+  <div class="story-text reveal">
+    <h2>Built by a family <em>obsessed</em> with freshness.</h2>
+    <p>FruitAM started in a small Hyderabad kitchen with one rule — never serve a fruit we wouldn't eat ourselves. Three years later, that rule still runs the place.</p>
+    <p>We pick from local mandis at 4 AM. Cut by hand. Box with care. And get to your door before your morning coffee gets cold.</p>
+    <p>No frozen stock. No preservatives. No shortcuts.</p>
+    <div class="story-sig">— The FruitAM Family</div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="inner">
+    <div class="sec-head reveal" style="margin-bottom:48px">
+      <div><h2>Loved by <em>15,000+</em> customers</h2><p class="sub">Real reviews from real Hyderabadis</p></div>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <p class="test-text">"Best fruit subscription in the city. The mango box during summer was unreal — every piece ripe and sweet."</p>
+        <div class="test-author"><div class="test-avatar">P</div><div><div class="test-name">Priya K.</div><div class="test-loc">Banjara Hills</div></div></div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <p class="test-text">"I order the Signature Box every weekday for breakfast. Saves me 30 mins of prep, and quality is consistently amazing."</p>
+        <div class="test-author"><div class="test-avatar">R</div><div><div class="test-name">Rohan M.</div><div class="test-loc">Madhapur</div></div></div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <p class="test-text">"The cold-pressed juices are gold. My kids love the watermelon-mint, and I love that there's zero added sugar."</p>
+        <div class="test-author"><div class="test-avatar">S</div><div><div class="test-name">Sneha T.</div><div class="test-loc">Gachibowli</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="reveal">Frequently <em>asked</em> questions</h2>
+  <p class="sub-c reveal">WhatsApp us for anything else — we usually reply in minutes.</p>
+  <div class="faq-list">
+    <div class="faq-item reveal"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>What areas in Hyderabad do you deliver to?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner">We deliver across all of Hyderabad — Banjara Hills, Jubilee Hills, Madhapur, Gachibowli, Kondapur, Hitec City, Kukatpally, Secunderabad, and surrounding areas. Most orders reach within 30 minutes.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>How fresh is the fruit, really?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner">We pick from local mandis at 4 AM. Cutting starts by 5 AM. Boxes are out the door before 7 AM. By the time it reaches you, it's been cut for under 3 hours.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Can I subscribe for daily delivery?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes! Weekly and monthly subscriptions available with up to 20% off. WhatsApp us at +91 7672045349 to set one up.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>What if the fruit isn't fresh?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner">Tell us within 30 minutes of delivery and we'll send a replacement immediately or refund 100% — no questions asked.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Do you do corporate / event orders?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner">Absolutely. Office breakfasts, conferences, weddings, and bulk orders with custom pricing. WhatsApp us with details for a quote.</div></div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <h3>Fruit<em>AM.</em></h3>
+        <p>Hand-cut fruit boxes, cold-pressed juices, and morning bowls — delivered fresh across Hyderabad.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/fruitam1" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2 0 3.58-.07 4.85-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07-3.2 0-3.58 0-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85 0-3.2.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.18 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 0 0 5.84 12 6.16 6.16 0 0 0 12 18.16 6.16 6.16 0 0 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8z"/></svg></a>
+          <a href="https://wa.me/917672045349" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.107z"/></svg></a>
+          <a href="tel:+917672045349" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Order</h4>
+        <a href="#menu">Today's Menu</a>
+        <a href="#" onclick="toggleCart();return false;">View Cart</a>
+        <a href="https://wa.me/917672045349" target="_blank">WhatsApp Order</a>
+        <a href="tel:+917672045349">Call: 7672045349</a>
+      </div>
+      <div class="foot-col"><h4>Company</h4>
+        <a href="#story">Our Story</a>
+        <a href="#">How We Work</a>
+        <a href="#">Careers</a>
+        <a href="#">Partner with us</a>
+      </div>
+      <div class="foot-col"><h4>Reach Us</h4>
+        <p>Hyderabad, Telangana, India</p>
+        <p>Mon — Sun · 6 AM to 8 PM</p>
+        <p style="opacity:.5;font-size:12px;margin-top:14px">Free delivery over ₹499</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 FruitAM. Made fresh, served fresh.</span>
+      <span>Designed with ♥ in Hyderabad</span>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-bar" id="cartBar">
+  <div class="info">
+    <div class="ct" id="cartBarCount">0 items</div>
+    <div class="pr" id="cartBarPrice">₹0</div>
+  </div>
+  <button class="view-cart" onclick="toggleCart()">View cart
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </button>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <div><h3>Your cart</h3><div class="item-ct" id="drawerItemCt">0 items</div></div>
+    <button class="close-btn" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot" style="display:none">
+    <div id="formError" style="display:none;background:#FEE2E2;color:#B91C1C;padding:10px 14px;border-radius:8px;font-size:12px;font-weight:600;margin-bottom:12px;text-align:center"></div>
+    <button class="whatsapp-btn" onclick="sendToWhatsApp()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.107zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Place order via WhatsApp
+    </button>
+    <p class="form-note">You'll be redirected to WhatsApp with your order prefilled. Confirm there to complete.</p>
+  </div>
+</aside>
+
+<script>
+const WHATSAPP_NUMBER='917672045349';
+const DELIVERY_FEE=40;
+const FREE_DELIVERY_OVER=499;
+
+const products=[
+  {id:'p1',name:'Signature Fruit Box',price:249,oldPrice:299,tag:'bestseller',cat:'signature',rating:4.9,reviews:2840,prep:'30 min',
+   desc:'8 hand-cut fruits: banana, papaya, guava, dragon fruit, grapes, mango, beetroot, sprouts. Our most-loved box.',
+   img:'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=600&q=80'},
+  {id:'p2',name:'Mini Breakfast Box',price:149,tag:null,cat:'signature',rating:4.7,reviews:1230,prep:'25 min',
+   desc:'5 fresh fruits, perfectly sized for one. Ideal for office or solo breakfast.',
+   img:'https://images.unsplash.com/photo-1547514701-42782101795e?w=600&q=80'},
+  {id:'p3',name:'Family Feast Box',price:499,oldPrice:599,tag:'bestseller',cat:'signature',rating:4.9,reviews:890,prep:'40 min',
+   desc:'12 fruits across 3 trays. Feeds 4. Built for breakfast tables and gatherings.',
+   img:'https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=600&q=80'},
+  {id:'p4',name:'Greek Yogurt Bowl',price:179,tag:'new',cat:'bowls',rating:4.8,reviews:560,prep:'20 min',
+   desc:'Thick Greek yogurt, seasonal fruits, granola, honey drizzle, chia seeds. Protein-packed.',
+   img:'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80'},
+  {id:'p5',name:'Acai Power Bowl',price:229,tag:'new',cat:'bowls',rating:4.9,reviews:340,prep:'20 min',
+   desc:'Frozen acai blend topped with banana, dragon fruit, granola, and coconut flakes.',
+   img:'https://images.unsplash.com/photo-1490323914169-4ef47baeb73f?w=600&q=80'},
+  {id:'p6',name:'Pink Smoothie Bowl',price:199,tag:null,cat:'bowls',rating:4.7,reviews:412,prep:'20 min',
+   desc:'Strawberry-banana smoothie base topped with fresh berries, coconut, and almonds.',
+   img:'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?w=600&q=80'},
+  {id:'p7',name:'Watermelon Mint Cooler',price:99,tag:null,cat:'juice',rating:4.8,reviews:1450,prep:'15 min',
+   desc:'Cold-pressed watermelon, fresh mint, lime, pinch of salt. Zero added sugar.',
+   img:'https://images.unsplash.com/photo-1622597467836-f3e6707e1191?w=600&q=80'},
+  {id:'p8',name:'Orange Carrot Ginger',price:119,tag:'bestseller',cat:'juice',rating:4.9,reviews:1820,prep:'15 min',
+   desc:'Sun-bright orange and carrot with a sharp ginger kick. Immunity in a bottle.',
+   img:'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=80'},
+  {id:'p9',name:'Green Glow Detox',price:139,tag:null,cat:'juice',rating:4.6,reviews:680,prep:'15 min',
+   desc:'Spinach, cucumber, apple, lemon, ginger. The detox classic, perfectly balanced.',
+   img:'https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=600&q=80'},
+  {id:'p10',name:'Alphonso Mango (1kg)',price:299,oldPrice:349,tag:'bestseller',cat:'single',rating:4.9,reviews:3200,prep:'30 min',
+   desc:'King of mangoes. Hand-picked from Ratnagiri farms. 1kg pack, perfectly ripe.',
+   img:'https://images.unsplash.com/photo-1605027990121-cbae9e0642db?w=600&q=80'},
+  {id:'p11',name:'Dragon Fruit Pack',price:189,tag:null,cat:'single',rating:4.7,reviews:540,prep:'30 min',
+   desc:'2 ripe dragon fruits — pink-skinned, sweet, packed with antioxidants.',
+   img:'https://images.unsplash.com/photo-1527325678964-54921661f888?w=600&q=80'},
+  {id:'p12',name:'Pomegranate Pearls (250g)',price:249,tag:null,cat:'single',rating:4.8,reviews:920,prep:'30 min',
+   desc:"250g of de-seeded pomegranate. Hand-prepared, so you don't have to.",
+   img:'https://images.unsplash.com/photo-1615485925763-15c4291637ee?w=600&q=80'},
+  {id:'p13',name:'Imported Berry Mix',price:329,tag:'new',cat:'single',rating:4.8,reviews:280,prep:'30 min',
+   desc:'Strawberries, blueberries, blackberries — 200g imported pack. Limited daily availability.',
+   img:'https://images.unsplash.com/photo-1488900128323-21503983a07e?w=600&q=80'},
+  {id:'p14',name:'Pineapple Chunks',price:129,tag:null,cat:'single',rating:4.7,reviews:780,prep:'30 min',
+   desc:'Pre-cut, perfectly sweet pineapple chunks. 300g pack, ready to eat.',
+   img:'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=600&q=80'},
+  {id:'p15',name:'Green Grapes (500g)',price:139,tag:null,cat:'single',rating:4.6,reviews:1120,prep:'30 min',
+   desc:'Crisp seedless green grapes, washed and ready. 500g punnet.',
+   img:'https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?w=600&q=80'}
+];
+
+const categories=[
+  {id:'signature',name:'Signature Boxes',emoji:'📦',desc:'Curated combos'},
+  {id:'bowls',name:'Breakfast Bowls',emoji:'🥣',desc:'Yogurt & acai'},
+  {id:'juice',name:'Cold-Pressed',emoji:'🥤',desc:'Fresh juices'},
+  {id:'single',name:'Single Fruits',emoji:'🍓',desc:'Buy by piece'}
+];
+
+let cart={};
+let currentFilter='all';
+let searchTerm='';
+
+function renderCategories(){
+  const grid=document.getElementById('catsGrid');
+  grid.innerHTML=categories.map(c=>{
+    const count=products.filter(p=>p.cat===c.id).length;
+    return `<div class="cat-tile reveal" onclick="filterByCat('${c.id}')">
+      <div class="emoji">${c.emoji}</div>
+      <div><div class="nm">${c.name}</div><div class="ct">${count} items · ${c.desc}</div></div>
+    </div>`;
+  }).join('');
+}
+
+function filterByCat(catId){
+  currentFilter=catId;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active',c.dataset.filter===catId));
+  renderMenu();
+  document.getElementById('menu').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderMenu(){
+  const grid=document.getElementById('menuGrid');
+  let items=products.slice();
+  if(currentFilter==='bestseller')items=items.filter(p=>p.tag==='bestseller');
+  else if(currentFilter==='new')items=items.filter(p=>p.tag==='new');
+  else if(currentFilter==='veg')items=items;
+  else if(currentFilter!=='all')items=items.filter(p=>p.cat===currentFilter);
+
+  if(searchTerm){
+    const t=searchTerm.toLowerCase();
+    items=items.filter(p=>p.name.toLowerCase().includes(t)||p.desc.toLowerCase().includes(t));
+  }
+
+  document.getElementById('menuSub').textContent=`${items.length} item${items.length!==1?'s':''} · Cut today`;
+
+  if(items.length===0){
+    grid.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--ink-3)">
+      <div style="font-size:48px;margin-bottom:14px">🍃</div>
+      <h3 style="font-family:'Fraunces';font-size:22px;color:var(--ink);margin-bottom:6px">No matches found</h3>
+      <p>Try a different search or category</p></div>`;
+    return;
+  }
+
+  grid.innerHTML=items.map(p=>`
+    <div class="card reveal" data-id="${p.id}">
+      <div class="card-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"/>
+        <div class="card-tags">
+          ${p.tag==='bestseller'?'<span class="pill bestseller">★ Bestseller</span>':''}
+          ${p.tag==='new'?'<span class="pill new">✨ New</span>':''}
+          ${p.oldPrice?`<span class="pill discount">${Math.round((1-p.price/p.oldPrice)*100)}% OFF</span>`:''}
+        </div>
+        <button class="heart-btn" onclick="event.stopPropagation();this.classList.toggle('liked')" aria-label="Save">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <h3 class="card-title">${p.name}</h3>
+          <span class="veg-mark" title="Vegetarian"></span>
+        </div>
+        <div class="card-meta">
+          <span class="rating">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            ${p.rating}
+          </span>
+          <span>${(p.reviews/1000).toFixed(1)}k reviews</span>
+          <span class="meta-dot"></span>
+          <span>${p.prep}</span>
+        </div>
+        <p class="card-desc">${p.desc}</p>
+        <div class="card-foot">
+          <div class="price-block">
+            <div class="price"><span class="cur">₹</span>${p.price}</div>
+            ${p.oldPrice?`<div class="price-old">₹${p.oldPrice}</div>`:''}
+          </div>
+          <div class="action-zone">
+            <button class="add-btn" id="add-${p.id}" onclick="addToCart('${p.id}')">ADD +</button>
+            <div class="qty-stepper" id="step-${p.id}">
+              <button onclick="changeQty('${p.id}',-1)" aria-label="Decrease">−</button>
+              <span class="qty-num" id="qty-${p.id}">0</span>
+              <button onclick="changeQty('${p.id}',1)" aria-label="Increase">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // Sync stepper visibility for items already in cart
+  Object.keys(cart).forEach(id=>{
+    const addBtn=document.getElementById(`add-${id}`);
+    const stepper=document.getElementById(`step-${id}`);
+    const qtyNum=document.getElementById(`qty-${id}`);
+    if(addBtn&&stepper&&qtyNum&&cart[id]>0){
+      addBtn.style.display='none';
+      stepper.classList.add('show');
+      qtyNum.textContent=cart[id];
+    }
+  });
+
+  document.querySelectorAll('.card.reveal').forEach(el=>observer.observe(el));
+}
+
+function addToCart(id){
+  cart[id]=1;
+  const addBtn=document.getElementById(`add-${id}`);
+  const stepper=document.getElementById(`step-${id}`);
+  const qtyNum=document.getElementById(`qty-${id}`);
+  if(addBtn)addBtn.style.display='none';
+  if(stepper)stepper.classList.add('show');
+  if(qtyNum){
+    qtyNum.textContent='1';
+    qtyNum.classList.add('bump');
+    setTimeout(()=>qtyNum.classList.remove('bump'),300);
+  }
+  updateCartUI();
+}
+
+function changeQty(id,delta){
+  if(!cart[id])cart[id]=0;
+  cart[id]+=delta;
+  if(cart[id]<=0){
+    delete cart[id];
+    const addBtn=document.getElementById(`add-${id}`);
+    const stepper=document.getElementById(`step-${id}`);
+    if(addBtn)addBtn.style.display='';
+    if(stepper)stepper.classList.remove('show');
+  }else{
+    const qtyNum=document.getElementById(`qty-${id}`);
+    if(qtyNum){
+      qtyNum.textContent=cart[id];
+      qtyNum.classList.add('bump');
+      setTimeout(()=>qtyNum.classList.remove('bump'),300);
+    }
+  }
+  updateCartUI();
+  if(document.getElementById('drawer').classList.contains('open'))renderCartDrawer();
+}
+
+function getCartTotals(){
+  let subtotal=0,count=0;
+  Object.keys(cart).forEach(id=>{
+    const p=products.find(x=>x.id===id);
+    subtotal+=p.price*cart[id];
+    count+=cart[id];
+  });
+  const deliveryFee=subtotal>=FREE_DELIVERY_OVER?0:(subtotal>0?DELIVERY_FEE:0);
+  return{subtotal,count,deliveryFee,total:subtotal+deliveryFee};
+}
+
+function updateCartUI(){
+  const{subtotal,count}=getCartTotals();
+  const navBadge=document.getElementById('navCartBadge');
+  navBadge.textContent=count;
+  navBadge.style.display=count>0?'flex':'none';
+  const bar=document.getElementById('cartBar');
+  if(count>0){
+    document.getElementById('cartBarCount').textContent=`${count} item${count>1?'s':''} added`;
+    document.getElementById('cartBarPrice').textContent=`₹${subtotal} + delivery`;
+    bar.classList.add('show');
+  }else bar.classList.remove('show');
+}
+
+function toggleCart(){
+  const open=document.getElementById('drawer').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+  if(open)renderCartDrawer();
+}
+
+function renderCartDrawer(){
+  const body=document.getElementById('drawerBody');
+  const foot=document.getElementById('drawerFoot');
+  const ids=Object.keys(cart);
+  const{subtotal,count,deliveryFee,total}=getCartTotals();
+  document.getElementById('drawerItemCt').textContent=`${count} item${count!==1?'s':''}`;
+
+  if(ids.length===0){
+    body.innerHTML=`<div class="empty"><div class="em-emoji">🛒</div><h4>Your cart is empty</h4><p>Add something fresh to get started</p></div>`;
+    foot.style.display='none';
+    return;
+  }
+
+  const remainingForFree=FREE_DELIVERY_OVER-subtotal;
+
+  body.innerHTML=`
+    <div class="cart-items">
+      ${ids.map(id=>{
+        const p=products.find(x=>x.id===id);
+        return `<div class="ci">
+          <div class="ci-img"><img src="${p.img}" alt=""/></div>
+          <div>
+            <div class="ci-name">${p.name}</div>
+            <div class="ci-price">₹${p.price} each</div>
+            <div class="ci-stepper">
+              <button onclick="changeQty('${p.id}',-1)">−</button>
+              <span class="n">${cart[id]}</span>
+              <button onclick="changeQty('${p.id}',1)">+</button>
+            </div>
+          </div>
+          <div class="ci-total">₹${p.price*cart[id]}</div>
+        </div>`;
+      }).join('')}
+    </div>
+    ${remainingForFree>0?`<div style="margin:0 20px 16px"><div class="save-banner"><span>🚚</span><span>Add ₹${remainingForFree} more for FREE delivery</span></div></div>`:`<div style="margin:0 20px 16px"><div class="save-banner"><span>🎉</span><span>You've unlocked FREE delivery!</span></div></div>`}
+    <div class="bill-summary">
+      <h5>Bill Details</h5>
+      <div class="bill-row"><span>Item total</span><span>₹${subtotal}</span></div>
+      <div class="bill-row"><span>Delivery fee</span>${deliveryFee===0?'<span class="free">FREE</span>':`<span>₹${deliveryFee}</span>`}</div>
+      <div class="bill-row total"><span>To pay</span><span>₹${total}</span></div>
+    </div>
+    <div class="checkout-form">
+      <h5>Delivery Details</h5>
+      <div class="row2">
+        <div class="field"><label>Your name</label><input type="text" id="custName" placeholder="Full name"/></div>
+        <div class="field"><label>Phone</label><input type="tel" id="custPhone" placeholder="10 digits" maxlength="10"/></div>
+      </div>
+      <div class="field"><label>Delivery address</label><textarea id="custAddress" placeholder="Flat / house number, street, area, landmark"></textarea></div>
+      <div class="field"><label>Delivery slot</label>
+        <select id="custSlot">
+          <option value="">Choose a time</option>
+          <option>ASAP (within 30 min)</option>
+          <option>7:00 – 8:00 AM</option>
+          <option>8:00 – 9:00 AM</option>
+          <option>9:00 – 10:00 AM</option>
+          <option>10:00 – 11:00 AM</option>
+          <option>4:00 – 5:00 PM</option>
+          <option>5:00 – 6:00 PM</option>
+          <option>6:00 – 7:00 PM</option>
+        </select>
+      </div>
+      <div class="field"><label>Payment method</label>
+        <div class="pay-options">
+          <button type="button" class="pay-opt active" data-pay="Cash on delivery">💵 Cash</button>
+          <button type="button" class="pay-opt" data-pay="UPI on delivery">📱 UPI</button>
+          <button type="button" class="pay-opt" data-pay="Online">💳 Online</button>
+        </div>
+      </div>
+      <div class="field"><label>Special instructions (optional)</label><input type="text" id="custNotes" placeholder="Allergies, gate code, etc."/></div>
+    </div>`;
+
+  document.querySelectorAll('.pay-opt').forEach(btn=>{
+    btn.onclick=function(){
+      document.querySelectorAll('.pay-opt').forEach(b=>b.classList.remove('active'));
+      this.classList.add('active');
+    };
+  });
+
+  foot.style.display='block';
+}
+
+function sendToWhatsApp(){
+  const name=document.getElementById('custName')?.value.trim();
+  const phone=document.getElementById('custPhone')?.value.trim();
+  const address=document.getElementById('custAddress')?.value.trim();
+  const slot=document.getElementById('custSlot')?.value;
+  const notes=document.getElementById('custNotes')?.value.trim()||'';
+  const pay=document.querySelector('.pay-opt.active')?.dataset.pay||'Cash on delivery';
+  const errBox=document.getElementById('formError');
+
+  if(!name||!phone||!address||!slot){
+    if(errBox){errBox.textContent='Please fill name, phone, address & delivery slot';errBox.style.display='block'}
+    return;
+  }
+  if(!/^\d{10}$/.test(phone)){
+    if(errBox){errBox.textContent='Please enter a valid 10-digit phone number';errBox.style.display='block'}
+    return;
+  }
+  if(errBox)errBox.style.display='none';
+
+  const ids=Object.keys(cart);
+  const{subtotal,deliveryFee,total}=getCartTotals();
+  const lines=ids.map((id,i)=>{
+    const p=products.find(x=>x.id===id);
+    return `${i+1}. ${p.name} × ${cart[id]}  →  ₹${p.price*cart[id]}`;
+  });
+
+  const orderNum='FA'+Date.now().toString().slice(-6);
+  const msg=`*🍓 NEW ORDER · FruitAM*
+Order #${orderNum}
+
+*Items:*
+${lines.join('\n')}
+
+*Item total:* ₹${subtotal}
+*Delivery:* ${deliveryFee===0?'FREE':'₹'+deliveryFee}
+*━━━━━━━━━━━━━━*
+*TOTAL: ₹${total}*
+
+*Customer:*
+👤 ${name}
+📞 +91 ${phone}
+📍 ${address}
+🕒 ${slot}
+💳 ${pay}
+${notes?`📝 ${notes}`:''}
+
+— Order placed via fruitam.com`;
+
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+
+document.querySelectorAll('.chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    currentFilter=chip.dataset.filter;
+    renderMenu();
+  });
+});
+
+document.getElementById('searchInput').addEventListener('input',e=>{
+  searchTerm=e.target.value;
+  renderMenu();
+  if(searchTerm)document.getElementById('menu').scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show');
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+
+renderCategories();
+renderMenu();
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
